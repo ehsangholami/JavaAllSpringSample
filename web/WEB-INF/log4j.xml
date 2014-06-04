@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+
+    <!-- Appender-->
+    <appender name="rootLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/rootLog.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="adpBulk" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/adpBulk.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="adpService" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/adpService.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="magfa" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/magfa.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="receiveService" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/receiveService.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="birthDay" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/birthDay.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="magfaStatus" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/magfaStatus.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="adpStatus" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.home}/logs/adpStatus.log"/>
+        <param name="Append" value="true"/>
+        <param name="ImmediateFlush" value="true"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- logger -->
+    <root>
+        <level value="debug"/>
+        <appender-ref ref="rootLog"/>
+    </root>
+
+    <logger name="com.candoosms.adpbulk" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="adpBulk"/>
+    </logger>
+
+    <logger name="com.candoosms.adpservice" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="adpService"/>
+    </logger>
+
+    <logger name="com.candoosms.magfa" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="magfa"/>
+    </logger>
+
+    <logger name="com.candoosms.receiveservice" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="receiveService"/>
+    </logger>
+
+    <logger name="com.candoosms.birthday" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="birthDay"/>
+    </logger>
+
+    <logger name="com.candoosms.magfastatus" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="magfaStatus"/>
+    </logger>
+
+    <logger name="com.candoosms.adpstatus" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="adpStatus"/>
+    </logger>
+
+</log4j:configuration>
